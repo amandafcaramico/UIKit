@@ -1,3 +1,5 @@
+![Banner](assets/cover.jpg)
+
 # UI Kit Project
 
 ## Overview
