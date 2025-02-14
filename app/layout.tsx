@@ -1,7 +1,7 @@
 "use client";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { metadata } from "@/utils/metadata";
+import { metadata } from "utils/metadata";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className="h-[calc(100dvh)]">
+      <body className="min-h-[calc(100dvh)] bg-off-white px-16 py-8">
         <ThemeProvider theme={theme}>
           {children}
           <ToastContainer limit={1} />
