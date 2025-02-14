@@ -62,12 +62,9 @@
 }
 
 .gradient-text {
-  background: linear-gradient(
-    to right,
-    var(--tw-gradient-from),
-    var(--tw-gradient-to)
-  );
+  background: linear-gradient(to right, #9333ea, #4f46e5);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  width: fit-content;
 }
