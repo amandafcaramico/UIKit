@@ -1,0 +1,41 @@
+name: TypeScript & Lint | Reviewdog
+
+on:
+  pull_request:
+    branches: [dev]
+
+jobs:
+  tsc:
+    name: TypeScript and Lint with Reviewdog
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run TypeScript with Reviewdog
+        uses: EPMatt/reviewdog-action-tsc@v1.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          filter_mode: nofilter
+          fail_on_error: true
+
+      - name: Run ESLint with Reviewdog
+        uses: reviewdog/action-eslint@v1.33.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          filter_mode: nofilter
+          fail_level: error
+          eslint_flags: "--ignore-pattern .storybook-static --ignore-pattern .next"

@@ -1,0 +1,8 @@
+node_modules
+.next
+build
+public
+coverage
+.github
+docs
+storybook-static

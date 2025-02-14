@@ -1,0 +1,27 @@
+name: Prettier | Reviewdog
+
+on:
+  pull_request:
+    branches: [dev]
+
+jobs:
+  prettier:
+    name: Prettier and Reviewdog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prettier with Reviewdog
+        uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          workdir: .
+          prettier_flags: '.'
+          filter_mode: nofilter
+          fail_on_error: true
