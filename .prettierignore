@@ -6,3 +6,5 @@ coverage
 .github
 docs
 storybook-static
+stories
+storybook

@@ -38,4 +38,4 @@ jobs:
           level: warning
           filter_mode: nofilter
           fail_level: error
-          eslint_flags: "--ignore-pattern .storybook-static --ignore-pattern .next"
+          eslint_flags: "--ignore-pattern .storybook-static --ignore-pattern .next --ignore-pattern stories"

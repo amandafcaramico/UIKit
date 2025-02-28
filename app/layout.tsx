@@ -3,6 +3,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { metadata } from "utils/metadata";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Logo from "@/components/Logo";
 
 const theme = createTheme({
   palette: {
@@ -22,11 +23,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className="min-h-[calc(100dvh)] bg-off-white px-16 py-8">
-        <ThemeProvider theme={theme}>
-          {children}
-          <ToastContainer limit={1} />
-        </ThemeProvider>
+      <body className="min-h-[calc(100dvh)] bg-off-white flex flex-col">
+        <Logo />
+        <main className="px-16 pt-4 pb-6">
+          <ThemeProvider theme={theme}>
+            {children}
+            <ToastContainer limit={1} />
+          </ThemeProvider>
+        </main>
       </body>
     </html>
   );
