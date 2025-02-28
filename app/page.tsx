@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
         height={0}
         priority
       />
+      <Link href="/textfields">1. TextFields</Link>
+      <Link href="/buttons">1. Buttons</Link>
     </div>
   );
 }

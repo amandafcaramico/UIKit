@@ -1,11 +1,6 @@
 "use client";
-import {
-  Input,
-  InputWithLabel,
-  InputWithIcon,
-  InputWithLabelandStatus,
-} from "@/components/textfields";
-import InputLessRounded from "@/components/textfields/InputLessRounded";
+import ElementTitle from "@/components/ElementTitle";
+import { Input } from "@/components/textfields";
 import Textarea from "@/components/textfields/TextArea";
 import TopicTitle from "@/components/TopicTitle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -20,24 +15,20 @@ export default function TextFieldsPage() {
       <div className="grid grid-cols-3 gap-14 mt-6">
         <div className="space-y-7">
           <section>
-            <h2 className=" text-purple-text font-medium mb-4">
-              Label, Status & Placeholder
-            </h2>
-            <InputWithLabelandStatus
-              id="input-label-status"
+            <ElementTitle title={"Label, State & Placeholder"} />
+            <Input
+              id="input-label-state"
               type="text"
               label="Label"
               placeholder="Placeholder"
               onChange={() => {}}
               disabled={false}
-              status={"Status"}
+              stateMessage={"State Message"}
             />
           </section>
 
           <section>
-            <h2 className=" text-purple-text font-medium mb-4">
-              No Label + No Status
-            </h2>
+            <ElementTitle title={"No Label + No State"} />
             <Input
               id="input-no-label"
               type="text"
@@ -48,10 +39,8 @@ export default function TextFieldsPage() {
           </section>
 
           <section>
-            <h2 className=" text-purple-text font-medium mb-4">
-              Input + Label
-            </h2>
-            <InputWithLabel
+            <ElementTitle title={"Input + Label"} />
+            <Input
               id="input-label"
               type="text"
               label="Label"
@@ -62,29 +51,33 @@ export default function TextFieldsPage() {
           </section>
 
           <section>
-            <h2 className=" text-purple-text font-medium mb-4">
-              Input with Icon
-            </h2>
-            <InputWithIcon
+            <ElementTitle title={"Input with Icon"} />
+            <Input
               id="password-field"
               type={showPassword ? "text" : "password"}
               label="Label"
               placeholder="Password Example"
               icon={
                 showPassword ? (
-                  <VisibilityOff className="cursor-pointer" />
+                  <VisibilityOff
+                    className="cursor-pointer"
+                    sx={{ fill: "#4F46E5" }}
+                  />
                 ) : (
-                  <Visibility className="cursor-pointer" />
+                  <Visibility
+                    className="cursor-pointer"
+                    sx={{ fill: "#4F46E5" }}
+                  />
                 )
               }
-              onIconClick={() => setShowPassword(!showPassword)}
+              onClickIcon={() => setShowPassword(!showPassword)}
             />
           </section>
         </div>
         <div className="space-y-6">
           <section className="mb-4">
-            <h2 className=" text-purple-text font-medium mb-4">Focus State</h2>
-            <InputWithLabel
+            <ElementTitle title={"Focus State"} />
+            <Input
               id="input-label-focus"
               type="text"
               label="Label"
@@ -95,36 +88,34 @@ export default function TextFieldsPage() {
             />
           </section>
           <section className="space-y-6">
-            <h2 className=" text-purple-text font-medium mb-4">
-              Validation States
-            </h2>
-            <InputWithLabelandStatus
+            <ElementTitle title={"Validation States"} />
+            <Input
               id="input-success"
               type="text"
               label="Label"
-              status="Success!"
+              stateMessage="Success!"
               placeholder="Placeholder"
               onChange={() => {}}
               state="success"
               disabled={false}
               className="outline-primary -translate-y-1 outline outline-[2px] outline-solid"
             />
-            <InputWithLabelandStatus
+            <Input
               id="input-warning"
               type="text"
               label="Label"
-              status="Warning!"
+              stateMessage="Warning!"
               placeholder="Placeholder"
               onChange={() => {}}
               state="warning"
               disabled={false}
               className="outline-primary -translate-y-1 outline outline-[2px] outline-solid"
             />
-            <InputWithLabelandStatus
+            <Input
               id="input-error"
               type="text"
               label="Label"
-              status="Error!"
+              stateMessage="Error!"
               placeholder="Placeholder"
               onChange={() => {}}
               state="error"
@@ -135,8 +126,8 @@ export default function TextFieldsPage() {
         </div>
         <div className="space-y-14">
           <section className="mb-4">
-            <h2 className=" text-purple-text font-medium mb-4">Disabled</h2>
-            <InputWithLabel
+            <ElementTitle title={"Disabled"} />
+            <Input
               id="input-disabled"
               type="text"
               label="Label"
@@ -146,20 +137,19 @@ export default function TextFieldsPage() {
             />
           </section>
           <section className="mb-4">
-            <h2 className=" text-purple-text font-medium mb-4">
-              Rounded Variants
-            </h2>
-            <InputLessRounded
+            <ElementTitle title={"Rounded Variants"} />
+            <Input
               id="less-rounded-input"
               type="text"
               placeholder="Placeholder"
               onChange={() => {}}
               disabled={false}
+              lessRounded={true}
               className=""
             />
           </section>
           <section className="mb-4">
-            <h2 className=" text-purple-text font-medium mb-4">Text Area</h2>
+            <ElementTitle title={"Text Area"} />
             <Textarea
               id="textearea"
               placeholder="Placeholder..."
