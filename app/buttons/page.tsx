@@ -129,7 +129,7 @@ export default function ButtonsPage() {
             />
           </section>
         </div>
-        <div className="space-y-[4.35rem]">
+        <div className="space-y-16">
           <section>
             <ElementTitle title={"Icon"} className="mb-0" />
           </section>

@@ -23,9 +23,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className="min-h-[calc(100dvh)] bg-off-white flex flex-col">
+      <body className="bg-off-white flex flex-col relative">
         <Logo />
-        <main className="px-16 pt-4 pb-6">
+        <main className="min-h-screen px-12 pt-12 pb-4 relative">
           <ThemeProvider theme={theme}>
             {children}
             <ToastContainer limit={1} />
