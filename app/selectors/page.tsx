@@ -8,7 +8,7 @@ import TabSelector from "@/components/Selectors/TabSelector";
 import Toggle from "@/components/Selectors/Toggle";
 import { useState } from "react";
 
-export default function ButtonsPage() {
+export default function SelectorsPage() {
   const [checked, setChecked] = useState(true);
   const [toggled, setToggled] = useState(true);
   const [radioChecked, setRadioChecked] = useState<string | null>("option1");
