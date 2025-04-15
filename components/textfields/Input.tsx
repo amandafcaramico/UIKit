@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+
 interface InputProps {
   id: string;
   type: "text" | "password";
@@ -13,6 +14,7 @@ interface InputProps {
   icon?: ReactElement;
   onClickIcon?: () => void;
   disabled?: boolean;
+  smaller?: boolean;
 }
 
 export type { InputProps };
@@ -31,6 +33,7 @@ const Input = ({
   icon,
   onClickIcon,
   disabled,
+  smaller,
 }: InputProps) => {
   const stateClasses = {
     success: "outline outline-[2px] outline-state-success outline-solid",
@@ -49,17 +52,21 @@ const Input = ({
   return (
     <div className="flex flex-col">
       {label && (
-        <label htmlFor={id} className="block text-base font-medium mb-2">
+        <label
+          htmlFor={id}
+          className={`block font-medium  ${smaller ? "text-xs mb-1" : "text-base mb-2"}`}
+        >
           {label}
         </label>
       )}
       <div className="relative">
         <input
-          className={`text-base w-full px-4 py-2 shadow-md transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary-purple hover:border-primary-purple bg-gray-100
+          className={`text-base w-full px-4 py-2 shadow-md transition duration-300 ease-in-out transform focus:-translate-y-1 focus:outline-primary-purple bg-gray-100
               ${state && stateClasses[state]} 
               ${lessRounded ? "rounded-lg" : "rounded-3xl"}
-              ${disabled ? "opacity-70" : "hover:shadow-lg"}
+              ${disabled ? "opacity-70" : "hover:shadow-lg hover:border-primary-purple"}
               ${icon && "peer pr-12"}
+              ${smaller && "!py-1.5"}
               ${className}
             `}
           placeholder={placeholder}
