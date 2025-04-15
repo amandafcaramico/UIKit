@@ -12,7 +12,7 @@ export const iconStyle = (bg: string) => ({
 });
 
 export const modalStyle = (isSmallScreen: boolean) => ({
-  position: "absolute" as "absolute",
+  position: "absolute",
   borderRadius: "1rem",
   top: "50%",
   left: "50%",
