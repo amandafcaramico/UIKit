@@ -20,6 +20,13 @@ export default function Home() {
           <span className="font-normal">2. </span>
           <span className="font-semibold gradient-text">Buttons</span>
         </Link>
+        <Link
+          href="/selectors"
+          className="hover:scale-105 transition-all duration-500 text-2xl"
+        >
+          <span className="font-normal">3. </span>
+          <span className="font-semibold gradient-text">Selectors</span>
+        </Link>
       </div>
       <Link
         href={

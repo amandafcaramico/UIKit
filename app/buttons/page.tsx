@@ -5,6 +5,7 @@ import { Visibility } from "@mui/icons-material";
 
 import TopicTitle from "@/components/TopicTitle";
 import IconButton from "@/components/buttons/IconButton";
+import CustomIcon from "@/components/Icon";
 
 export default function ButtonsPage() {
   return (
@@ -164,6 +165,7 @@ export default function ButtonsPage() {
               lessRounded={true}
             />
           </section>
+          <CustomIcon />
         </div>
       </div>
     </>
