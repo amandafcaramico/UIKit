@@ -27,6 +27,13 @@ export default function Home() {
           <span className="font-normal">3. </span>
           <span className="font-semibold gradient-text">Selectors</span>
         </Link>
+        <Link
+          href="/small-elements"
+          className="hover:scale-105 transition-all duration-500 text-2xl"
+        >
+          <span className="font-normal">4. </span>
+          <span className="font-semibold gradient-text">Small Elements</span>
+        </Link>
       </div>
       <Link
         href={

@@ -28,9 +28,11 @@ const Pagination = ({
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
             key={page}
+            aria-current={isActive ? "page" : undefined}
+            aria-label={`Página ${page}`}
             animate={{ backgroundColor: isActive ? "#4F46E5" : "#ffffff" }}
             onClick={() => onPageChange(page)}
-            className={`p-2 w-8 h-8 text-sm w-full h-full flex items-center justify-center transition-colors duration-300
+            className={`p-2 w-8 h-8 text-sm flex items-center justify-center transition-colors duration-300
                 border-[1.5px] border-primary shadow-md hover:shadow-lg ${
                   isActive ? "text-white" : "text-black"
                 } ${lessRounded ? "rounded-md" : "rounded-3xl"}`}
