@@ -1,10 +1,8 @@
 "use client";
-import ElementTitle from "@/components/ElementTitle";
-import { Input } from "@/components/textfields";
-import Textarea from "@/components/textfields/TextArea";
-import TopicTitle from "@/components/TopicTitle";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
+import { Input, TextArea } from "@/components/textfields/index";
+import { TopicTitle, ElementTitle } from "@/components/index";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export default function TextFieldsPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -150,7 +148,7 @@ export default function TextFieldsPage() {
           </section>
           <section className="mb-4">
             <ElementTitle title={"Text Area"} />
-            <Textarea
+            <TextArea
               id="textearea"
               placeholder="Placeholder..."
               onChange={(e) => console.log(e.target.value)}

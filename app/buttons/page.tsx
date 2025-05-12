@@ -1,11 +1,7 @@
 "use client";
-import ElementTitle from "@/components/ElementTitle";
-import { Button } from "@/components/buttons";
+import { TopicTitle, ElementTitle, CustomIcon } from "@/components/index";
+import { Button, IconButton } from "@/components/buttons/index";
 import { Visibility } from "@mui/icons-material";
-
-import TopicTitle from "@/components/TopicTitle";
-import IconButton from "@/components/buttons/IconButton";
-import CustomIcon from "@/components/Icon";
 
 export default function ButtonsPage() {
   return (
