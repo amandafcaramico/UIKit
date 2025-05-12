@@ -1,10 +1,5 @@
 import { ReactNode } from "react";
-import {
-  Select,
-  MenuItem,
-  SelectChangeEvent,
-  SelectProps,
-} from "@mui/material";
+import { Select, MenuItem, SelectChangeEvent } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 interface SelectInputProps {
